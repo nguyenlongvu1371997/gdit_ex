@@ -1,0 +1,15 @@
+{
+    "name": "root/gdit_ex",
+    "description": "vunl",
+    "type": "library",
+    "license": "123",
+    "authors": [
+        {
+            "name": "vunl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "fakerphp/faker": "^1.23"
+    }
+}

@@ -1,0 +1,122 @@
+{
+  "ftp://gdit_ftp@192.168.1.217": {
+    "htdocs": {
+      "gdit_ex": {
+        "composer.json": {
+          "type": "-",
+          "size": 267,
+          "lmtime": 0,
+          "modified": false
+        },
+        "composer.lock": {
+          "type": "-",
+          "size": 7437,
+          "lmtime": 0,
+          "modified": false
+        },
+        "test": {
+          "test.php": {
+            "type": "-",
+            "size": 131,
+            "lmtime": 1703737890495.374,
+            "modified": false
+          }
+        },
+        "user": {
+          "check_database.php": {
+            "type": "-",
+            "size": 708,
+            "lmtime": 0,
+            "modified": false
+          },
+          "check_record.php": {
+            "type": "-",
+            "size": 807,
+            "lmtime": 1704266749286.5276,
+            "modified": false
+          },
+          "delete_file.php": {
+            "type": "-",
+            "size": 382,
+            "lmtime": 1704266785609.685,
+            "modified": false
+          },
+          "export.csv": {
+            "type": "-",
+            "size": 778132468,
+            "lmtime": 1704266674279.0452,
+            "modified": true
+          },
+          "export_case1.php": {
+            "type": "-",
+            "size": 1667,
+            "lmtime": 1704275264875.0642,
+            "modified": false
+          },
+          "export_case2.php": {
+            "type": "-",
+            "size": 1678,
+            "lmtime": 1704275602222.0193,
+            "modified": false
+          },
+          "insert_case1.php": {
+            "type": "-",
+            "size": 1841,
+            "lmtime": 1704179453038.0151,
+            "modified": true
+          },
+          "insert_case2.php": {
+            "type": "-",
+            "size": 1725,
+            "lmtime": 1704183230510.1272,
+            "modified": true
+          },
+          "insert_case3.php": {
+            "type": "-",
+            "size": 2171,
+            "lmtime": 1704266330236.0767,
+            "modified": false
+          },
+          "insert_file.php": {
+            "type": "-",
+            "size": 1375,
+            "lmtime": 1704272025445.544,
+            "modified": false
+          },
+          "test.csv": {
+            "type": "-",
+            "size": 77811063,
+            "lmtime": 0,
+            "modified": true
+          },
+          "truncate_database.php": {
+            "type": "-",
+            "size": 738,
+            "lmtime": 0,
+            "modified": false
+          },
+          "user.csv": {
+            "type": "-",
+            "size": 778132468,
+            "lmtime": 1704161866585.555,
+            "modified": true
+          },
+          "user.php": {
+            "type": "-",
+            "size": 1070,
+            "lmtime": 1703727418706.0151,
+            "modified": false
+          },
+          "view.php": {
+            "type": "-",
+            "size": 2939,
+            "lmtime": 1704275788605.0515,
+            "modified": false
+          }
+        },
+        "vendor": {}
+      }
+    }
+  },
+  "$version": 1
+}
