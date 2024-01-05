@@ -32,7 +32,7 @@
         if($file){
             $count = 0;
             $value = [];
-            $size = 1000;
+            $size = 10000;
             $conn->begin_transaction();
             while(($row = fgetcsv($file)) !== FALSE){
                 $count++;

@@ -4,15 +4,14 @@
 
         if($_GET['file']==1){
             $file_path = 'test.csv';
-            $limit = 1000000;
         } else if($_GET['file']==2){
-            $limit = 10000000;
             $file_path = 'user.csv';
         } else {
             header("Location: view.php");
             exit;
         } 
         $start = time();
+        $noti;
     
         $servername = "localhost";
         $username = "root";
@@ -44,10 +43,14 @@
 
 
           } else {
-            echo "Ko thể mở file";
+            $noti = "không thể mở file";
+            header("Location: view.php?noti=$noti");
+            exit;
           }
         } else {
-          echo "file ko tồn tại";
+          $noti = "file ko tồn tại";
+          header("Location: view.php?noti=$noti");
+          exit;
         }
         
        

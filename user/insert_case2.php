@@ -30,7 +30,7 @@
       if (file_exists($file_path)) {
         $file = fopen($file_path, "r");
         if($file){
-          $conn->begin_transaction();
+          // $conn->begin_transaction();
           while(($row = fgetcsv($file)) !== FALSE) {
             $first_name = $conn->real_escape_string($row[0]);
             $last_name = $conn->real_escape_string($row[1]);
@@ -42,7 +42,7 @@
               
           }
 
-          $conn->commit();
+          // $conn->commit();
 
         } else {
           echo "Ko thể mở file";
