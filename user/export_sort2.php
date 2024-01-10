@@ -63,11 +63,11 @@
     }
 
 
-    $id = 0;
+    $off_set = 0;
     $limit = 100000;
-    $sql = "SELECT first_name , last_name, address, DATE_FORMAT(birthday, '%b-%d-%Y') AS birthday from $table WHERE id > ? LIMIT ?";
+    $sql = "SELECT first_name , last_name, address, DATE_FORMAT(birthday, '%b-%d-%Y') AS birthday from $table LIMIT ? OFFSET ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('ii', $id, $limit);
+    $stmt->bind_param('ii', $limit, $off_set);
 
     $result = $conn->query($sql);
     
@@ -99,7 +99,7 @@
             break;
         } 
 
-        $id += $limit;
+        $off_set += $limit;
 
     }
     

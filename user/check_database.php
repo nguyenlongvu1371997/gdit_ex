@@ -17,7 +17,7 @@
          exit;
     }
 
-    $sql = "SELECT count(*) as count from users";
+    $sql = "SELECT count(id) as count from users";
     $result = $conn->query($sql);
     $noti = "Số lượng record trong database là: ". $result->fetch_assoc()["count"];
     $conn->close();

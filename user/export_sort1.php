@@ -1,5 +1,5 @@
 <?php
-
+    
     $start = time();
     $noti = '';
 
@@ -32,30 +32,25 @@
     $address = $conn->real_escape_string($_GET["address"]);
     $sort = $conn->real_escape_string($_GET["sort"]);
 
-    $table = uniqid('user_');
 
     $conn->begin_transaction();
    
-    $conn->query("CREATE TABLE $table(
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        first_name varchar(255),
-        last_name varchar(255),
-        address text,
-        birthday DATE
-    )");
+    $sql;
 
     if($sort==1){
-       $conn->query("INSERT INTO $table (birthday, first_name, last_name, address)
-       SELECT STR_TO_DATE(birthday, '%M-%d-%Y'), first_name, last_name, address
-       FROM users
-       WHERE address like '%$address%'
-       ORDER BY STR_TO_DATE(birthday, '%M-%d-%Y')");
+        $sql = "SELECT STR_TO_DATE(birthday, '%M-%d-%Y') as format_birthday, first_name, last_name, address, birthday
+        FROM users
+        WHERE address like '%$address%'
+        ORDER BY format_birthday 
+        LIMIT ? 
+        OFFSET ?";
     } else if($sort==0) {
-        $conn->query("INSERT INTO $table (birthday, first_name, last_name, address)
-       SELECT STR_TO_DATE(birthday, '%M-%d-%Y'), first_name, last_name, address
-       FROM users
-       WHERE address like '%$address%'
-       ORDER BY STR_TO_DATE(birthday, '%M-%d-%Y') DESC");
+        $sql = "SELECT STR_TO_DATE(birthday, '%M-%d-%Y') as format_birthday, first_name, last_name, address, birthday
+        FROM users
+        WHERE address like '%$address%'
+        ORDER BY format_birthday DESC
+        LIMIT ? 
+        OFFSET ?";
     } else {
         $noti = "lỗi";
         header("Location: view.php?noti=$noti");
@@ -65,7 +60,7 @@
 
     $off_set = 0;
     $limit = 100000;
-    $sql = "SELECT first_name , last_name, address, DATE_FORMAT(birthday, '%b-%d-%Y') AS birthday from $table LIMIT ? OFFSET ?";
+    
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ii', $limit, $off_set);
 
@@ -100,12 +95,12 @@
         } 
 
         $off_set += $limit;
-
+       
     }
     
     
     fclose($file);
-    $conn->query("DROP TABLE $table");
+    
     $conn->commit();
     $conn->close();
     $end = time();

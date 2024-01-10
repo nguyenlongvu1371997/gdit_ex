@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST</title>
+    <title>TEST SQLITE</title>
     <style>
         body {
             background-color: black;
@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <h1>TEST</h1>
+    <h1>TEST SQLITE</h1>
     <?php
         $noti = $_GET['noti'];
         if(isset($noti)){
@@ -113,6 +113,6 @@
     
     <hr>
 
-    <h1>TEST SQLITE</h1>
+    
 </body>
 </html>
